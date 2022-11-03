@@ -5,7 +5,7 @@ import HomePage from './home';
 // organised alongside its related files (styles, tests) like the other pages
 
 const IndexPage: NextPage = () => {
-  return <HomePage />;
+	return <HomePage />;
 };
 
 export default IndexPage;

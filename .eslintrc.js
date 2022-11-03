@@ -5,7 +5,7 @@ module.exports = {
 		es6: true,
 		jest: true,
 	},
-	parserOptions: { ecmaVersion: 8 },
+	parserOptions: { ecmaVersion: 8, sourceType: 'module' },
 	ignorePatterns: [
 		'node_modules/*',
 		'.next/*',
