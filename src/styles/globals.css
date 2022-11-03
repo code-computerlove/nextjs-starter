@@ -33,16 +33,3 @@ a {
 * {
   box-sizing: border-box;
 }
-<<<<<<< HEAD
-
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
-  body {
-    color: white;
-    background: black;
-  }
-}
-=======
->>>>>>> cb5ad813247e829416196c3edc5e622a0da1c458
