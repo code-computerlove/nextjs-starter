@@ -59,3 +59,42 @@ Copied content from Ryan's starter.
 // package.json "scripts" object
 "format": "prettier '*/**/*.{js,jsx,ts,tsx,json,md}' --write",
 ```
+
+## Husky
+
+Install husky
+
+```node
+npm i -D husky lint-staged
+```
+
+Install the git hooks
+
+```node
+npx husky install
+```
+
+Add the prepare script to the `package.json`
+
+```node
+"prepare": "husky install"
+```
+
+Set up a `lint-staged.config.js` file in the root of the project because running the lint-ts script above won't work unless it's inside a function syntax:
+
+```javascript
+module.exports = {
+	'*.{js,jsx,ts,tsx,json,md}': 'prettier --write',
+	'*.{js,jsx,ts,tsx}': 'eslint --fix',
+	'*.{css}': 'stylelint --fix',
+	'*.{ts,tsx}': () => 'tsc -p tsconfig.json --noEmit',
+};
+```
+
+Add this script to the pre-commit hook by running this command:
+
+```node
+npx husky add .husky/pre-commit "npx lint-staged"
+```
+
+Any commits should now be automatically linted and fail with an appropriate error when necessary.
