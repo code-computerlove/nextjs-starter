@@ -60,6 +60,8 @@ Copied content from Ryan's starter.
 "format": "prettier '*/**/*.{js,jsx,ts,tsx,json,md}' --write",
 ```
 
+<<<<<<< HEAD
+
 ### Set up Storybook
 
 ```node
@@ -68,4 +70,45 @@ npx storybook init
 
 During installation you will be asked if you want to run the `npm7` migration as currently Storybook has peer dependency semantics which are incompatible with `npm 8`. Choose yes to run the migration.
 
-Copied contents of `.storybook` from Ryan's start
+# Copied contents of `.storybook` from Ryan's start
+
+## Husky
+
+Install husky
+
+```node
+npm i -D husky lint-staged
+```
+
+Install the git hooks
+
+```node
+npx husky install
+```
+
+Add the prepare script to the `package.json`
+
+```node
+"prepare": "husky install"
+```
+
+Set up a `lint-staged.config.js` file in the root of the project because running the lint-ts script above won't work unless it's inside a function syntax:
+
+```javascript
+module.exports = {
+	'*.{js,jsx,ts,tsx,json,md}': 'prettier --write',
+	'*.{js,jsx,ts,tsx}': 'eslint --fix',
+	'*.{css}': 'stylelint --fix',
+	'*.{ts,tsx}': () => 'tsc -p tsconfig.json --noEmit',
+};
+```
+
+Add this script to the pre-commit hook by running this command:
+
+```node
+npx husky add .husky/pre-commit "npx lint-staged"
+```
+
+Any commits should now be automatically linted and fail with an appropriate error when necessary.
+
+> > > > > > > main

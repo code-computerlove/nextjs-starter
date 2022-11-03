@@ -12,7 +12,8 @@
 		"lint-css": "stylelint '*/**/*.{css}' --fix",
 		"format": "prettier '*/**/*.{js,jsx,ts,tsx,json,md}' --write",
 		"storybook": "start-storybook -s public -p 6006",
-		"build-storybook": "build-storybook -o public/storybook"
+		"build-storybook": "build-storybook -o public/storybook",
+		"prepare": "husky install"
 	},
 	"dependencies": {
 		"@types/node": "18.11.9",
@@ -43,6 +44,8 @@
 		"eslint-plugin-react-hooks": "^4.6.0",
 		"msw": "^0.47.4",
 		"postcss-loader": "^7.0.1",
+		"husky": "^8.0.1",
+		"lint-staged": "^13.0.3",
 		"prettier": "^2.7.1",
 		"storybook-addon-performance": "^0.16.1",
 		"stylelint": "^14.14.0"
