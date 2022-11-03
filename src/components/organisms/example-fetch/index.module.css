@@ -1,0 +1,13 @@
+.fetcher {
+	display: flex;
+	align-items: center;
+
+	& > div {
+		margin-left: 1rem;
+	}
+}
+
+.value {
+	font-weight: bold;
+	color: var(--colorGreen);
+}
