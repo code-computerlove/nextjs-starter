@@ -23,6 +23,11 @@ Create `.eslintrc.js` file in the root of the project to configure.
 ```
 
 Copied `.eslintrc.js` content from Ryan's starter.
+Removed this as it isn't an issue anymore in Next v13.
+
+```json
+"jsx-a11y/anchor-is-valid": "off",
+```
 
 ### Set up Stylelint
 
