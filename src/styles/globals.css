@@ -1,3 +1,25 @@
+<<<<<<< HEAD
+=======
+:root {
+	/* colors */
+	--colorBlack: #000;
+	--colorWhite: #fff;
+	--colorGreen: #228844;
+
+	/* fonts */
+	--fontFamilyBase: Helvetica, arial, sans-serif;
+	--fontFamilyHeading: Georgia, serif;
+	--fontSizeRegular: 1.2rem;
+	--fontSizeLarge: 2rem;
+
+	/* spacing */
+	--spacingMedium: 2rem;
+
+	/* shadows */
+	--shadowLarge: 0 2px 30px 0 rgba(var(--colorBlack), 0.15);
+}
+
+>>>>>>> cb5ad813247e829416196c3edc5e622a0da1c458
 html,
 body {
   padding: 0;
@@ -14,6 +36,7 @@ a {
 * {
   box-sizing: border-box;
 }
+<<<<<<< HEAD
 
 @media (prefers-color-scheme: dark) {
   html {
@@ -24,3 +47,5 @@ a {
     background: black;
   }
 }
+=======
+>>>>>>> cb5ad813247e829416196c3edc5e622a0da1c458

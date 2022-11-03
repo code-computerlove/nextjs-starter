@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import Head from 'next/head'
 import Image from 'next/image'
 import { Button,  LinkButton } from 'src/components/atoms/button'
@@ -72,3 +73,16 @@ export default function Home() {
     </div>
   )
 }
+=======
+import { NextPage } from 'next';
+import HomePage from './home';
+
+// the home page component is imported here from a folder so that it can be
+// organised alongside its related files (styles, tests) like the other pages
+
+const IndexPage: NextPage = () => {
+  return <HomePage />;
+};
+
+export default IndexPage;
+>>>>>>> cb5ad813247e829416196c3edc5e622a0da1c458
