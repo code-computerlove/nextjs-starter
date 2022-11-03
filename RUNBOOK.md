@@ -60,18 +60,6 @@ Copied content from Ryan's starter.
 "format": "prettier '*/**/*.{js,jsx,ts,tsx,json,md}' --write",
 ```
 
-<<<<<<< HEAD
-
-### Set up Storybook
-
-```node
-npx storybook init
-```
-
-During installation you will be asked if you want to run the `npm7` migration as currently Storybook has peer dependency semantics which are incompatible with `npm 8`. Choose yes to run the migration.
-
-# Copied contents of `.storybook` from Ryan's start
-
 ## Husky
 
 Install husky
@@ -111,4 +99,12 @@ npx husky add .husky/pre-commit "npx lint-staged"
 
 Any commits should now be automatically linted and fail with an appropriate error when necessary.
 
-> > > > > > > main
+## Set up Storybook
+
+```node
+npx storybook init
+```
+
+During installation you will be asked if you want to run the `npm7` migration as currently Storybook has peer dependency semantics which are incompatible with `npm 8`. Choose yes to run the migration.
+
+Copied contents of `.storybook` from Ryan's start
