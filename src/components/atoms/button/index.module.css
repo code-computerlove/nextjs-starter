@@ -8,11 +8,6 @@
 	line-height: 1.5;
 	text-decoration: none;
 }
-<<<<<<< HEAD
-/* 
-=======
-
->>>>>>> cb5ad813247e829416196c3edc5e622a0da1c458
 .primary {
 	background-color: var(--colorBlack);
 	color: var(--colorWhite);
@@ -35,8 +30,4 @@
 		background-color: var(--colorBlack);
 		color: var(--colorWhite);
 	}
-<<<<<<< HEAD
-} */
-=======
 }
->>>>>>> cb5ad813247e829416196c3edc5e622a0da1c458
