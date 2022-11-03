@@ -40,8 +40,11 @@ export const LinkButton: React.FC<TLinkButton> = ({
 	...linkAttributes
 }) => {
 	return (
-		<Link {...linkAttributes}>
-			<a className={`${styles.btn} ${styles[variant]}`}>{children}</a>
+		<Link
+			{...linkAttributes}
+			className={`${styles.btn} ${styles[variant]}`}
+		>
+			{children}
 		</Link>
 	);
 };
