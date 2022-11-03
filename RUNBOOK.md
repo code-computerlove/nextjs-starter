@@ -60,6 +60,12 @@ Copied content from Ryan's starter.
 "format": "prettier '*/**/*.{js,jsx,ts,tsx,json,md}' --write",
 ```
 
+### editorcofig (coding standards)
+
+Make sure you have an editorconfig extension installed for your test editor of choice. For example VSCode: https://marketplace.visualstudio.com/items?itemName=EditorConfig.EditorConfig.
+
+Add a `.editorconfig` file to the root of the project, and copy the rules from [our front end coding standards](https://www.notion.so/codecomputerlove/Front-End-Coding-Standards-d657ea2e972d4563a5edcf666322624a) into it.
+
 ## Husky
 
 Install husky
