@@ -59,3 +59,13 @@ Copied content from Ryan's starter.
 // package.json "scripts" object
 "format": "prettier '*/**/*.{js,jsx,ts,tsx,json,md}' --write",
 ```
+
+### Set up Storybook
+
+```node
+npx storybook init
+```
+
+During installation you will be asked if you want to run the `npm7` migration as currently Storybook has peer dependency semantics which are incompatible with `npm 8`. Choose yes to run the migration.
+
+Copied contents of `.storybook` from Ryan's start
