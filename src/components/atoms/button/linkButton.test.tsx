@@ -1,35 +1,37 @@
 import { render, screen, cleanup } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
-import { Button, TButton } from './index';
+import { LinkButton, TLinkButton } from './index';
 import { afterEach, describe, expect, test, vi } from 'vitest';
 
-describe('atoms/button', () => {
+describe('atoms/button(LinkButton)', () => {
 	afterEach(() => {
 		vi.clearAllMocks();
 		cleanup();
 	});
 
-	test('should render', async () => {
-		const { user, props } = setupTest({ props: { onClick: vi.fn() } });
-		const btn = screen.getByText('Button');
-		expect(btn).toBeTruthy();
-		await user.click(btn);
-		expect(props.onClick).toHaveBeenCalledTimes(1);
+	test('should render', () => {
+		setupTest();
+		const linkBtn = screen.getByText('Link Button');
+		expect(linkBtn).toBeTruthy();
+		expect(linkBtn.getAttribute('href')).toBe('/test');
 	});
 });
 
 type TestOverrides = {
-	props?: Partial<TButton>;
+	props?: Partial<TLinkButton>;
 };
 
-const getDefaultProps = (overrides: Partial<TButton> = {}): TButton => ({
+const getDefaultProps = (
+	overrides: Partial<TLinkButton> = {},
+): TLinkButton => ({
+	href: '/test',
 	...overrides,
 });
 
 const setupTest = (overrides: TestOverrides = {}) => {
 	const props = getDefaultProps(overrides.props);
 	const utils = render(
-		<Button {...props}>{props.children ?? 'Button'}</Button>,
+		<LinkButton {...props}>{props.children ?? 'Link Button'}</LinkButton>,
 	);
 	return {
 		...utils,
