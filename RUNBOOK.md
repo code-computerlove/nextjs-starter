@@ -105,6 +105,4 @@ Any commits should now be automatically linted and fail with an appropriate erro
 npx storybook init
 ```
 
-During installation you will be asked if you want to run the `npm7` migration as currently Storybook has peer dependency semantics which are incompatible with `npm 8`. Choose yes to run the migration.
-
 Copied contents of `.storybook` from Ryan's start
