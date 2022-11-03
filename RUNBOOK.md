@@ -105,6 +105,29 @@ npx husky add .husky/pre-commit "npx lint-staged"
 
 Any commits should now be automatically linted and fail with an appropriate error when necessary.
 
+## Set up PostCSS
+
+Create `postcss.config.js` file in the root of the project.
+To enable nesting you just need to set `"nesting-rules": true` in the feature object of postcss-preset-env.
+
+In VSCode - at the time of writing it's slightly awkward to get proper nested syntax highlighting without breaking the normal CSS intellisense. Use the postcss-sugarss-language extension and not the PostCSS Language Support extension and add this to the workspace settings:
+
+```json
+"files.associations": { "*.css": "postcss" },
+```
+
+### Global styles and variables
+
+Create a `global.css` file into `./src/styles` to handle globals and variables here. To add the globals to the whole app just import the file directly into the custom `_app.tsx` inside `./pages`:
+
+```javascript
+import '../styles/globals.css';
+```
+
+Variables are set in the `:root` element inside `globals.css` and are then available inside any module.
+
+⚠️ As far as I know, at the time of writing - there is not a way to get any CSS variable autocomplete extension in vscode to work alongside the postcss syntax highlighting extension, you can have either one or the other. Any solution to this would be welcome.
+
 ## Set up Storybook
 
 ```node
