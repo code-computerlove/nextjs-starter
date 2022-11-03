@@ -98,3 +98,11 @@ npx husky add .husky/pre-commit "npx lint-staged"
 ```
 
 Any commits should now be automatically linted and fail with an appropriate error when necessary.
+
+## Set up Storybook
+
+```node
+npx storybook init
+```
+
+Copied contents of `.storybook` from Ryan's start

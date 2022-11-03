@@ -1,0 +1,50 @@
+const path = require('path');
+
+module.exports = {
+	stories: [
+		'../src/**/*.stories.mdx',
+		'../src/**/*.stories.@(js|jsx|ts|tsx)',
+	],
+  addons: [
+    '@storybook/addon-links',
+    '@storybook/addon-essentials',
+    '@storybook/addon-interactions',
+    '@storybook/addon-a11y',
+    'storybook-addon-performance/register',
+  ],
+	core: {
+		builder: 'webpack5',
+	},
+	webpackFinal: async (config, { configType }) => {
+		// remove the existing css rule
+		config.module.rules = config.module.rules.filter(
+			(f) => f.test.toString() !== '/\\.css$/',
+		);
+
+		// add loader for css modules
+		config.module.rules.push({
+			test: /\.css$/,
+			include: path.resolve(__dirname, '../src'),
+			use: [
+				'style-loader',
+				{
+					loader: 'css-loader',
+					options: {
+						importLoaders: 1,
+						modules: true,
+					},
+				},
+				'postcss-loader',
+			],
+		});
+
+		// Needed to allow finding of imports inside of components
+		config.resolve.modules = [
+			...(config.resolve.modules || []),
+			path.resolve('./'),
+		];
+
+		// return the altered config
+		return config;
+	},
+};
