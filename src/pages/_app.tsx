@@ -4,11 +4,14 @@ import dynamic from 'next/dynamic';
 
 const MockApi = dynamic(() => import('./mock-api'));
 
-export default function App({ Component, pageProps }: AppProps) {
+const MyApp: React.FC<AppProps> = ({ Component, pageProps }) => {
   return (
     <>
       <MockApi />
       <Component {...pageProps} />
     </>
   );
-}
+};
+
+export default MyApp;
+
