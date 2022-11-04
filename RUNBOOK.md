@@ -8,6 +8,14 @@ npx create-next-app@latest . --typescript
 
 ## Linting
 
+### Running the tests
+
+Tests are implemented using [React Testing Library](https://testing-library.com/docs/react-testing-library/intro/), and [Vitest](https://vitest.dev/) is used to run them. To run the existing tests:
+
+```node
+$ npm test
+```
+
 ### Set up ESLint
 
 ```node
