@@ -1,12 +1,19 @@
 import { render, screen, cleanup } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
-import { Button, TButton } from './index';
 import { afterEach, describe, expect, test, vi } from 'vitest';
+import { checkPa11y } from 'test/test-utils';
+
+import { Button, TButton } from './index';
 
 describe('atoms/button', () => {
 	afterEach(() => {
 		vi.clearAllMocks();
 		cleanup();
+	});
+
+	test('passes accessibility checks', async () => {
+		const { container } = setupTest();
+		await checkPa11y(container);
 	});
 
 	test('should render', async () => {
