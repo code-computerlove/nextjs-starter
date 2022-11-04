@@ -1,5 +1,6 @@
-import { server } from 'src/api/mocks/server';
 import { vi, afterEach, afterAll, beforeAll } from 'vitest';
+
+import { server } from 'src/api/mocks/server';
 
 if (!global.fetch) {
 	global.fetch = vi.fn();
