@@ -143,3 +143,22 @@ npx storybook init
 ```
 
 Copied contents of `.storybook` from Ryan's start
+
+## Setup a11y testing
+
+There are two parts to this:
+
+-   a11y error checks in the browser devtools for the current output from Next
+-   a helper (and examples of use) to Unit Tests that run components through axe to test for automated accessibility issues
+
+To install the devtools extension I followed the guide [here](https://larsmagnus.co/blog/how-to-test-for-accessibility-with-axe-core-in-next-js-and-react). Esentially, we create a helper that sits in a utils folder called `reportAccessibility.ts`, which contains the code to check for a browser environment and inject the axe-core script into the page. This helper is then imported in `_app.js` , which runs it on every page load (and HMR reload I _think_).
+
+To install the helper for the Unit Tests there is a package called `jext-axe`, which kinda wraps axe in a way that it can be run in a Unit Test. The helper is installed with `npm i -D jest-axe` and then imported into `test/test-utils.ts`. The helper is then called from a Unit Test with the component to be tested as an argument.
+
+```javascript
+import { checkPa11y } from 'test/test-utils';
+test('passes accessibility checks', async () => {
+	const { container } = render(<Component />);
+	await checkPa11y(container);
+});
+```

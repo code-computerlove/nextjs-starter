@@ -3,7 +3,7 @@ import { axe } from 'vitest-axe';
 import * as matchers from 'vitest-axe/matchers';
 expect.extend(matchers);
 
-export const checkPa11y = async (
+export const checkA11y = async (
 	component: string | Element,
 	axeOptions = {},
 ) => {

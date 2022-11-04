@@ -1,7 +1,7 @@
 import { render, screen, cleanup } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { afterEach, describe, expect, test, vi } from 'vitest';
-import { checkPa11y } from 'test/test-utils';
+import { checkA11y } from 'test/test-utils';
 
 import { LinkButton, TLinkButton } from './index';
 
@@ -13,7 +13,7 @@ describe('atoms/button(LinkButton)', () => {
 
 	test('passes accessibility checks', async () => {
 		const { container } = setupTest();
-		await checkPa11y(container);
+		await checkA11y(container);
 	});
 
 	test('should render', () => {
