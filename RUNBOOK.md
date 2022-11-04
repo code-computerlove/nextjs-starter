@@ -22,7 +22,7 @@ We use [`hygen`](https://www.hygen.io/) to automate some tasks.
 
 ```node
 # Will generate new component, including test, storybook and CSS file
-npm new component
+npm run new component
 ```
 
 ### Set up ESLint
