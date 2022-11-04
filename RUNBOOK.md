@@ -16,6 +16,15 @@ Tests are implemented using [React Testing Library](https://testing-library.com/
 $ npm test
 ```
 
+##### New templates
+
+We use [`hygen`](https://www.hygen.io/) to automate some tasks.
+
+```node
+# Will generate new component, including test, storybook and CSS file
+npm new component
+```
+
 ### Set up ESLint
 
 ```node
