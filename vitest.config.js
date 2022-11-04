@@ -14,7 +14,7 @@ export default defineConfig({
 	},
 	test: {
 		environment: 'jsdom',
-		setupFiles: ['test/jest-setup.ts'],
+		setupFiles: ['test/test-setup.ts'],
 		coverage: {
 			reportsDirectory: 'coverage',
 			exclude: ['src/generated/**'],
