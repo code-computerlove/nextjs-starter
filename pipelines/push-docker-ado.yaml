@@ -1,0 +1,29 @@
+# Requires the docker ADO extension
+
+trigger:
+- main
+
+resources:
+- repo: self
+
+stages:
+- stage: Build
+  displayName: Build image
+  jobs:
+  - job: Build
+    displayName: Build
+    pool:
+      vmImage: ubuntu-latest
+    steps:
+    - task: DockerInstaller@0
+      inputs:
+        dockerVersion: '17.09.0-ce'
+    - task: Docker@2
+      inputs:
+        containerRegistry: #Your registry or service connection
+        command: 'buildAndPush'
+        Dockerfile: 'Dockerfile'
+        repository: #Your registry
+        tags: |
+          $(Build.BuildId)
+          latest
