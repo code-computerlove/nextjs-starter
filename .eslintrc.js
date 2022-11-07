@@ -11,6 +11,7 @@ module.exports = {
 		'.next/*',
 		'.husky/*',
 		'.storybook/*',
+		'generators/*',
 		'infrastructure',
 		'public',
 		'!.prettierrc.js',
