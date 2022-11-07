@@ -171,3 +171,26 @@ test('passes accessibility checks', async () => {
 	await checkPa11y(container);
 });
 ```
+
+## Setup commitlint
+
+Add commitlint to the project
+
+```node
+npm i -D @commitlint/cli @commitlint/config-conventional
+```
+
+Add the commitlint config to the root of the project in `commitlint.config.js`:
+
+```javascript
+module.exports = { extends: ['@commitlint/config-conventional'] };
+```
+
+Add the husky command in `.husky/commit-msg`:
+
+```node
+#!/usr/bin/env sh
+. "$(dirname -- "$0")/_/husky.sh"
+
+npx --no -- commitlint --edit ${1}
+```

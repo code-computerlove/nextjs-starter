@@ -24,6 +24,8 @@
 	},
 	"devDependencies": {
 		"@axe-core/react": "^4.5.0",
+		"@commitlint/cli": "^17.2.0",
+		"@commitlint/config-conventional": "^17.2.0",
 		"@storybook/addon-a11y": "^6.5.13",
 		"@storybook/addon-actions": "^6.5.13",
 		"@storybook/addon-essentials": "^6.5.13",
