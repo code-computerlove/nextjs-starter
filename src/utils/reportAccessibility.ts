@@ -8,7 +8,7 @@ export const reportAccessibility = async (
 		typeof window !== 'undefined' &&
 		process.env.NODE_ENV !== 'production'
 	) {
-		const axe = await import(/* webpackIgnore: true */ '@axe-core/react');
+		const axe = await import('@axe-core/react');
 		const ReactDOM = await import('react-dom');
 
 		axe.default(App, ReactDOM, 1000, config);
