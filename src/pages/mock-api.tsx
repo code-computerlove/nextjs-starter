@@ -1,7 +1,7 @@
-import React from 'react';
+import { useEffect } from 'react';
 
 const MockApi: React.FC = () => {
-	React.useEffect(() => {
+	useEffect(() => {
 		const { worker } = require('src/api/mocks/browser');
 		worker.start({ onUnhandledRequest: 'bypass' });
 	}, []);
