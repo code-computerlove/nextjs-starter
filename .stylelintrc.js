@@ -6,7 +6,7 @@ module.exports = {
 		'max-empty-lines': 2,
 		'max-nesting-depth': 4,
 		'number-no-trailing-zeros': true,
-		'string-quotes': 'double',
+		'string-quotes': 'single',
 		'length-zero-no-unit': true,
 		'declaration-block-no-duplicate-properties': true,
 		'declaration-block-no-redundant-longhand-properties': true,

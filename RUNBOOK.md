@@ -35,8 +35,8 @@ Create `.eslintrc.js` file in the root of the project to configure.
 
 ```json
 // package.json "scripts" object
-"lint-js": "eslint '*/**/*.{js,jsx,ts,tsx}' --fix",
-"lint-ts": "tsc -p tsconfig.json --noEmit",
+"lint:js": "eslint '*/**/*.{js,jsx,ts,tsx}' --fix",
+"lint:ts": "tsc -p tsconfig.json --noEmit",
 ```
 
 Copied `.eslintrc.js` content from Ryan's starter.
@@ -58,7 +58,7 @@ Copied `.stylelintrc.js` content from Ryan's starter.
 
 ```json
 // package.json "scripts" object
-"lint-css": "stylelint '*/**/*.{css}' --fix",
+"lint:css": "stylelint '*/**/*.{css}' --fix",
 ```
 
 ### Set up Prettier
@@ -107,9 +107,9 @@ Set up a `lint-staged.config.js` file in the root of the project because running
 
 ```javascript
 module.exports = {
-	'*.{js,jsx,ts,tsx,json,md}': 'prettier --write',
+	'*.{js,jsx,ts,tsx,json,md,css,scss}': 'prettier --write',
 	'*.{js,jsx,ts,tsx}': 'eslint --fix',
-	'*.{css}': 'stylelint --fix',
+	'*.{css,scss}': 'stylelint --fix',
 	'*.{ts,tsx}': () => 'tsc -p tsconfig.json --noEmit',
 };
 ```
@@ -121,6 +121,11 @@ npx husky add .husky/pre-commit "npx lint-staged"
 ```
 
 Any commits should now be automatically linted and fail with an appropriate error when necessary.
+
+### Husky troubleshooting
+
+-   Even though the prepare script should run on install, you may have to run it manually in your terminal
+-   On Mac to get some of the linting working you may have to set the correct permissions on the husky file: `chmod ug+x .husky/*`
 
 ## Set up PostCSS
 
