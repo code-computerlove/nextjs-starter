@@ -1,5 +1,5 @@
 ---
-to: "src/components/<%= type %>/<%= name %>/index.spec.tsx"
+to: "src/components/<%= type %>/<%= name %>/index.test.tsx"
 ---
 import { render, screen, cleanup } from '@testing-library/react';
 import { afterEach, describe, expect, test, vi } from 'vitest';
