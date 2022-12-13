@@ -12,7 +12,9 @@ const MyApp: React.FC<AppProps> = ({ Component, pageProps }) => {
 	return (
 		<>
 			<MockApi />
-			<Component {...pageProps} />
+			<main id="main-content" className="main">
+				<Component {...pageProps} />
+			</main>
 		</>
 	);
 };

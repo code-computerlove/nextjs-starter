@@ -1,4 +1,4 @@
-import { NextPage } from 'next';
+import type { NextPage } from 'next';
 import HomePage from './home';
 
 // the home page component is imported here from a folder so that it can be

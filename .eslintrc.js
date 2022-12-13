@@ -47,6 +47,7 @@ module.exports = {
 						allowConciseArrowFunctionExpressionsStartingWithVoid: true,
 					},
 				],
+				'no-mixed-spaces-and-tabs': ['warn', 'smart-tabs'],
 			},
 		},
 	],

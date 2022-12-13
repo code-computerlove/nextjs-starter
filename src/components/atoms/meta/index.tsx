@@ -1,4 +1,5 @@
-import { NextPage } from 'next';
+import type { NextPage } from 'next';
+
 import Head from 'next/head';
 import React from 'react';
 
@@ -11,7 +12,9 @@ export const Meta: NextPage<TMeta> = ({ title, description }) => {
 	return (
 		<Head>
 			<title>{title}</title>
-			{description && <meta name="description" content={description} />}
+			{description ? (
+				<meta name="description" content={description} />
+			) : null}
 		</Head>
 	);
 };

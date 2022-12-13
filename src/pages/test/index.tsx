@@ -1,9 +1,12 @@
-import { NextPage } from 'next';
+import type { NextPage } from 'next';
+
 import React from 'react';
-import { Meta } from 'src/components/atoms/meta';
-import { Header } from 'src/components/layout/header';
-import { ExampleCounter } from 'src/components/organisms/example-counter';
-import { ExampleFetch } from 'src/components/organisms/example-fetch';
+
+import { Meta } from '~/components/atoms/meta';
+import { ExampleCounter } from '~/components/organisms/example-counter';
+import { ExampleFetch } from '~/components/organisms/example-fetch';
+import { Header } from '~/components/layout/header';
+
 import styles from './index.module.css';
 
 const TestPage: NextPage = () => {
