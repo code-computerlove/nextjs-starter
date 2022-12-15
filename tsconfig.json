@@ -6,6 +6,7 @@
 		"skipLibCheck": true,
 		"strict": true,
 		"forceConsistentCasingInFileNames": true,
+		"importsNotUsedAsValues": "error",
 		"noEmit": true,
 		"esModuleInterop": true,
 		"module": "esnext",
@@ -17,7 +18,9 @@
 		"baseUrl": "./",
 		"paths": {
 			"pages/*": ["pages/*"],
-			"src/*": ["src/*"]
+			"src/*": ["src/*"],
+			"~/*": ["src/*"],
+			"~~/*": ["./*"]
 		}
 	},
 	"include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],

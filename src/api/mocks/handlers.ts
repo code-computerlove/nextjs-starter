@@ -1,5 +1,6 @@
+import type { TTest } from '../testMockFetch';
+
 import { rest } from 'msw';
-import { TTest } from '../testMockFetch';
 
 export const mockedTest: TTest = {
 	key: 'Great success!',

@@ -6,7 +6,7 @@ expect.extend(matchers);
 export const checkA11y = async (
 	component: string | Element,
 	axeOptions = {},
-) => {
+): Promise<void> => {
 	const results = await axe(component, axeOptions);
 
 	expect(results).toHaveNoViolations();

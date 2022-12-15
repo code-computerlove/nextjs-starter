@@ -1,13 +1,15 @@
 ---
 to: "src/components/<%= type %>/<%= name %>/index.test.tsx"
 ---
+import type { <%= h.inflection.camelize(name) %> } from './';
+
 import { render, screen, cleanup } from '@testing-library/react';
 import { afterEach, describe, expect, test, vi } from 'vitest';
 import { checkA11y } from 'test/test-utils';
-import <%= h.inflection.camelize(name) %>, { T<%= h.inflection.camelize(name) %> } from './'
+import { <%= h.inflection.camelize(name) %> } from './';
 
 describe('~/components/<%= type %>/<%= name %>', () => {
-  afterEach(() => {
+	afterEach(() => {
 		vi.clearAllMocks();
 		cleanup();
 	});
@@ -35,7 +37,7 @@ const getDefaultProps = (overrides: Partial<T<%= h.inflection.camelize(name) %>>
 const setupTest = (overrides: TestOverrides = {}) => {
 	const props = getDefaultProps(overrides.props);
 	const utils = render(
-    <<%= h.inflection.camelize(name) %> {...props}>{props.children ?? 'Component'}</<%= h.inflection.camelize(name) %>>
+    	<<%= h.inflection.camelize(name) %> {...props}>{props.children ?? 'Component'}</<%= h.inflection.camelize(name) %>>
 	);
 	return {
 		...utils,
